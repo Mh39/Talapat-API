@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TalabatG02.Repository.Data;
 
@@ -11,9 +12,10 @@ using TalabatG02.Repository.Data;
 namespace TalabatG02.Repository.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20231104072315_addOrderEntities")]
+    partial class addOrderEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,7 +79,7 @@ namespace TalabatG02.Repository.Data.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("deliveryMethodId")
-                        .HasColumnType("int?");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
